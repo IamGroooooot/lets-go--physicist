@@ -18,7 +18,7 @@ public class playerController : MonoBehaviour
     private float safeSpace;
     private float shootpower;
 
-    public Canvas clearCanvas;
+    private GameObject clearCanvas;
 
     private Vector3 shootDirection;
 
@@ -34,6 +34,10 @@ public class playerController : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Target");
     }
 
+    private void Start()
+    {
+        clearCanvas = GameObject.Find("Panels").transform.GetChild(2).gameObject;
+    }
 
     private void OnMouseDrag()
     {
@@ -50,7 +54,7 @@ public class playerController : MonoBehaviour
 
         doArrowAndCirclestuff();
         //calc power and direction
-        shootpower = Mathf.Abs(safeSpace) * 6;
+        shootpower = Mathf.Abs(safeSpace) * 8;
 
         t_Rigidbody = target.GetComponent<Rigidbody>();
         t_Rigidbody.constraints = RigidbodyConstraints.FreezePosition;
@@ -123,4 +127,20 @@ public class playerController : MonoBehaviour
 
     }
 
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Target")
+        {
+            Debug.Log("원숭이 맞춤");
+            clearCanvas.gameObject.SetActive(true);
+            Destroy(collision.gameObject);
+        }
+        else
+        {
+            
+        }
+
+
+    }
 }

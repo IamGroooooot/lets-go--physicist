@@ -13,11 +13,12 @@ public class JHOnButtonClicked : MonoBehaviour
 
         if (SceneManager.GetActiveScene().buildIndex >= MAX_STAGE_BUILD_ID)
         {
-
+            transform.Find("Panels").Find("ClearPanel").Find("Buttons").Find("Next").gameObject.SetActive(false);
             transform.Find("Panels").Find("PausePanel").Find("Buttons").Find("Next").gameObject.SetActive(false);
         }
         if (SceneManager.GetActiveScene().buildIndex <= MIN_STAGE_BUILD_ID)
         {
+            transform.Find("Panels").Find("ClearPanel").Find("Buttons").Find("Prev").gameObject.SetActive(false);
             transform.Find("Panels").Find("PausePanel").Find("Buttons").Find("Prev").gameObject.SetActive(false);
 
         }

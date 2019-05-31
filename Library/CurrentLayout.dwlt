@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 472}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -92,10 +92,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 913, y: 422}
-  m_MaxSize: {x: 22008, y: 10022}
+  m_MinSize: {x: 917, y: 444}
+  m_MaxSize: {x: 22012, y: 10022}
   vertical: 0
-  controlID: 72
+  controlID: 126
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -138,10 +138,10 @@ MonoBehaviour:
     y: 0
     width: 789
     height: 947
-  m_MinSize: {x: 202, y: 422}
-  m_MaxSize: {x: 4002, y: 8022}
+  m_MinSize: {x: 202, y: 444}
+  m_MaxSize: {x: 4002, y: 8044}
   vertical: 1
-  controlID: 32
+  controlID: 82
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -266,8 +266,8 @@ MonoBehaviour:
     y: 486
     width: 789
     height: 461
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 222}
+  m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -328,9 +328,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: aa4d0000
-      m_LastClickedID: 19882
-      m_ExpandedIDs: 5cccffff7cd6ffff94d8fffffad8ffffd4dcffff44e1ffff6ce5fffffef9ffff
+      m_SelectedIDs: f8330000
+      m_LastClickedID: 13304
+      m_ExpandedIDs: 7ceaffff8cfbffff8efbffffb8330000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -428,20 +428,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/See_No_Evil_Monkey_v2_L3.123c322c30e1-d727-47f1-9c5a-1aea9be9eee0
+    - Assets/Icons UI/Icons color
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/See_No_Evil_Monkey_v2_L3.123c322c30e1-d727-47f1-9c5a-1aea9be9eee0
+  - Assets/Icons UI/Icons color
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "C:\\Users\\duryk\\Desktop\\\uC0C8 \uD3F4\uB354\\lets-go-physicist"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 624a0000
-    m_LastClickedID: 19042
-    m_ExpandedIDs: 00000000d82f000008300000203700003a3700005438000056390000
+    m_SelectedIDs: 462e0000
+    m_LastClickedID: 11846
+    m_ExpandedIDs: 00000000be290000ee290000a42e0000223100003c3100005c330000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -469,7 +469,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d82f00003a370000
+    m_ExpandedIDs: 00000000be290000ee290000223100003c3100005a320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -497,7 +497,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 
+    m_ExpandedInstanceIDs: de2d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -641,9 +641,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.1961362, y: 0.3021365, z: 2.1118488}
+    m_Target: {x: -0.1916672, y: 1.3571885, z: -0.21311283}
     speed: 2
-    m_Value: {x: -1.1961362, y: 0.3021365, z: 2.1118488}
+    m_Value: {x: -0.1916672, y: 1.3571885, z: -0.21311283}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -672,13 +672,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.0014992951, y: 0.0275979, z: -0.000040996405, w: 0.99962044}
+    m_Target: {x: 0.07315233, y: 0.08725339, z: -0.006424239, w: 0.9934783}
     speed: 2
-    m_Value: {x: 0.0029987162, y: 0.027597738, z: -0.00008239341, w: 0.9996146}
+    m_Value: {x: 0.07315216, y: 0.08725318, z: -0.0064242235, w: 0.9934759}
   m_Size:
-    m_Target: 20.099798
+    m_Target: 17.854502
     speed: 2
-    m_Value: 19.234257
+    m_Value: 17.085648
   m_Ortho:
     m_Target: 0
     speed: 2

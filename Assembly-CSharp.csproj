@@ -62,6 +62,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
+    <Compile Include="Assets\Demo\Assets\CFX_Demo_New.cs" />
+    <Compile Include="Assets\Demo\Assets\CFX_Demo_RandomDir.cs" />
+    <Compile Include="Assets\Demo\Assets\CFX_Demo_RotateCamera.cs" />
+    <Compile Include="Assets\Demo\Assets\CFX_Demo_Translate.cs" />
+    <Compile Include="Assets\Demo\Assets\CFX2_Demo.cs" />
     <Compile Include="Assets\Script\Constant\JHEnum.cs" />
     <Compile Include="Assets\Script\MouseFollow.cs" />
     <Compile Include="Assets\Script\Object\Actor\JHActor.cs" />
@@ -71,8 +77,21 @@
     <Compile Include="Assets\Script\UI\JHOnButtonClicked.cs" />
     <Compile Include="Assets\Script\UI\JHSceneManger.cs" />
     <Compile Include="Assets\Script\Variable\JHGameVariableManager.cs" />
+    <Compile Include="Assets\Scripts\CFX_AutoDestructShuriken.cs" />
+    <Compile Include="Assets\Scripts\CFX_AutodestructWhenNoChildren.cs" />
+    <Compile Include="Assets\Scripts\CFX_InspectorHelp.cs" />
+    <Compile Include="Assets\Scripts\CFX_LightIntensityFade.cs" />
+    <Compile Include="Assets\Scripts\CFX_ShurikenThreadFix.cs" />
+    <Compile Include="Assets\Scripts\CFX2_AutoRotate.cs" />
+    <Compile Include="Assets\Spawn System\CFX_SpawnSystem.cs" />
     <Compile Include="Assets\UltraMare\Minimalist Cartoon UI Pack\Scripts\MyCursor.cs" />
     <Compile Include="Assets\UltraMare\Minimalist Cartoon UI Pack\Scripts\StatsExample.cs" />
+    <None Include="Assets\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
+    <None Include="Assets\Shaders\CFX2 Particle Alpha Blend Add.shader" />
+    <None Include="Assets\Demo\Assets\CFX_Demo_WaterWiggle.shader" />
+    <None Include="Assets\Shaders\CFXM_MobileParticleAB_Alpha8.shader" />
+    <None Include="Assets\Shaders\CFX2 Particle Alpha Blend Tint.shader" />
+    <None Include="Assets\CartoonFX2 Readme.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/duryk/Desktop/새 폴더/lets-go-physicist/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

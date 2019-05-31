@@ -62,6 +62,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Editor\CFX_InspectorHelpEditor.cs" />
+    <Compile Include="Assets\Editor\CFX_SpawnSystemEditor.cs" />
     <Compile Include="Assets\PlayerPrefsViewer\Editor\PlayerPrefsViewer.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/duryk/Desktop/새 폴더/lets-go-physicist/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
