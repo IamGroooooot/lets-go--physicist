@@ -54,7 +54,7 @@ public class playerController : MonoBehaviour
 
         doArrowAndCirclestuff();
         //calc power and direction
-        shootpower = Mathf.Abs(safeSpace) * 8;
+        shootpower = Mathf.Abs(safeSpace) * 7;
 
         t_Rigidbody = target.GetComponent<Rigidbody>();
         t_Rigidbody.constraints = RigidbodyConstraints.FreezePosition;
