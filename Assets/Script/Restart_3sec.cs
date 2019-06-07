@@ -14,7 +14,6 @@ public class Restart_3sec : MonoBehaviour
 
     public void DoRestartCounting()
     {
-        
         int limit = 3;
         timerCounter_txt = this.transform.GetChild(1).GetComponent<Text>();
         StartCoroutine(threeSecondTimer(timerCounter_txt, limit));
@@ -22,14 +21,16 @@ public class Restart_3sec : MonoBehaviour
 
     public IEnumerator threeSecondTimer(Text timer,int limit)
     {
-
-        timer.text = limit.ToString();
-        yield return new WaitForSeconds(1f);
-        if(limit == 0)
+        while (true)
         {
-            JHOnButtonClicked.instance.OnClick_Restart();
+            timer.text = limit.ToString();
+            yield return new WaitForSeconds(1f);
+            if (limit <= 1)
+            {
+                break;
+            }
+            limit--;
         }
-        limit--;
-        
+        JHOnButtonClicked.instance.OnClick_Restart();
     }
 }

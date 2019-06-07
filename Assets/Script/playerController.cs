@@ -33,7 +33,7 @@ public class playerController : MonoBehaviour
         arrow = GameObject.FindGameObjectWithTag("Arrow");
         circle = GameObject.FindGameObjectWithTag("Circle");
         target = GameObject.FindGameObjectWithTag("Target");
-      
+        shot = false;
     }
 
     private void Start()
@@ -68,16 +68,15 @@ public class playerController : MonoBehaviour
         mousePointB.transform.position = new Vector3(mousePointB.transform.position.x, mousePointB.transform.position.y, -0.5f);
 
         shootDirection = Vector3.Normalize(mousePointA.transform.position - transform.position);
-
+        _3DTextCtrl.instance.MsgOnDragStart();
     }
-
 
 
     private void OnMouseUp()
     {
         arrow.GetComponent<Renderer>().enabled = false;
         circle.GetComponent<Renderer>().enabled = false;
-
+        shot = true;
         //발사하면 떨어지게
         t_Rigidbody.constraints = RigidbodyConstraints.None;
         t_Rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
@@ -142,27 +141,18 @@ public class playerController : MonoBehaviour
         {
             return;
         }
-        if(collision.gameObject.tag == "Floor" && target.transform.position.y<-9)
+        if(shot && collision.gameObject.tag == "Floor")
         {
             Destroy(target);
-            GameObject.Find("Panels").transform.GetChild(1).gameObject.SetActive(true);
-            Restart_3sec.instance.DoRestartCounting();
+            StartCoroutine(gameOver());
+            shot = false;
         }
-
-
     }
-
-    private void OnCollisionStay(Collision collision)
+    IEnumerator gameOver()
     {
-        if(target == null)
-        {
-            return;
-        }
-        if (collision.gameObject.tag == "Floor" && target.transform.position.y < -9)
-        {
-            Destroy(target);
-            GameObject.Find("Panels").transform.GetChild(1).gameObject.SetActive(true);
-            Restart_3sec.instance.DoRestartCounting();
-        }
+        yield return new WaitForSeconds(0.5f);
+        GameObject.Find("Panels").transform.GetChild(1).gameObject.SetActive(true);
+        Restart_3sec.instance.DoRestartCounting();
     }
+    
 }

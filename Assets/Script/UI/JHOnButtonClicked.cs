@@ -55,7 +55,6 @@ public class JHOnButtonClicked : MonoBehaviour
     {
         Time.timeScale = 1;
         Debug.Log("is Restarted, TimeScale set to " + Time.timeScale.ToString());
-        Debug.Log("초기화시켜 줘야 됨");
         _Pause.SetActive(false);
         _Clear.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex );
