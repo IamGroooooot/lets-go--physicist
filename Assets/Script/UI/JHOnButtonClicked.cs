@@ -4,12 +4,14 @@ using UnityEngine.SceneManagement;
 public class JHOnButtonClicked : MonoBehaviour
 {
     GameObject _Pause;
+    GameObject _Clear;
     const int MAX_STAGE_BUILD_ID = 5;
     const int MIN_STAGE_BUILD_ID = 2;
     private void Start()
     {
         _Pause = transform.Find("Panels").Find("PausePanel").gameObject;
         _Pause.SetActive(false);
+        _Clear = transform.Find("Panels").Find("ClearPanel").gameObject;
 
         if (SceneManager.GetActiveScene().buildIndex >= MAX_STAGE_BUILD_ID)
         {
@@ -47,6 +49,9 @@ public class JHOnButtonClicked : MonoBehaviour
         Time.timeScale = 1;
         Debug.Log("is Restarted, TimeScale set to " + Time.timeScale.ToString());
         Debug.Log("초기화시켜 줘야 됨");
+        _Pause.SetActive(false);
+        _Clear.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex );
     }
 
     /// <summary>
