@@ -15,18 +15,8 @@ public class _3DTextCtrl : MonoBehaviour
 
     public void MsgOnDragStart()
     {
-        textMesh.text = "원숭이를 맞추려면\n어디를 조준해야\n될까요?";
+        textMesh.text = "<b>원숭이</b>를 맞추려면\n어디를 조준해야\n될까요?";
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
