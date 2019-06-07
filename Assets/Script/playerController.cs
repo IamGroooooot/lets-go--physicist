@@ -24,6 +24,7 @@ public class playerController : MonoBehaviour
 
     Rigidbody t_Rigidbody;
 
+    bool shot=false;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -32,6 +33,7 @@ public class playerController : MonoBehaviour
         arrow = GameObject.FindGameObjectWithTag("Arrow");
         circle = GameObject.FindGameObjectWithTag("Circle");
         target = GameObject.FindGameObjectWithTag("Target");
+      
     }
 
     private void Start()
@@ -136,11 +138,31 @@ public class playerController : MonoBehaviour
             clearCanvas.gameObject.SetActive(true);
             Destroy(collision.gameObject);
         }
-        else
+        if (target == null)
         {
-            
+            return;
+        }
+        if(collision.gameObject.tag == "Floor" && target.transform.position.y<-9)
+        {
+            Destroy(target);
+            GameObject.Find("Panels").transform.GetChild(1).gameObject.SetActive(true);
+            Restart_3sec.instance.DoRestartCounting();
         }
 
 
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if(target == null)
+        {
+            return;
+        }
+        if (collision.gameObject.tag == "Floor" && target.transform.position.y < -9)
+        {
+            Destroy(target);
+            GameObject.Find("Panels").transform.GetChild(1).gameObject.SetActive(true);
+            Restart_3sec.instance.DoRestartCounting();
+        }
     }
 }

@@ -9,6 +9,8 @@ TagManager:
   - Circle
   - Arrow
   - Target
+  - FxTemporaire
+  - Floor
   layers:
   - Default
   - TransparentFX

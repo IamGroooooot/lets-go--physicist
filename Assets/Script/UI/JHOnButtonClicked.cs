@@ -3,6 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class JHOnButtonClicked : MonoBehaviour
 {
+    public static JHOnButtonClicked instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     GameObject _Pause;
     GameObject _Clear;
     const int MAX_STAGE_BUILD_ID = 5;
