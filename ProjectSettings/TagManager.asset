@@ -12,6 +12,7 @@ TagManager:
   - FxTemporaire
   - Floor
   - Refraction
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -21,8 +22,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Ground
+  - Electron
   - 
   - 
   - 
