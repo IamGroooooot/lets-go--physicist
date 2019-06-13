@@ -13,6 +13,7 @@ TagManager:
   - Floor
   - Refraction
   - Fire
+  - Minimap
   layers:
   - Default
   - TransparentFX
