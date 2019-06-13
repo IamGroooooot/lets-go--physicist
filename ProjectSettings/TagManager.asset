@@ -11,6 +11,7 @@ TagManager:
   - Target
   - FxTemporaire
   - Floor
+  - Refraction
   layers:
   - Default
   - TransparentFX
