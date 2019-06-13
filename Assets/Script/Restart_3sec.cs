@@ -7,6 +7,8 @@ public class Restart_3sec : MonoBehaviour
 {
     public static Restart_3sec instance = null;
     private Text timerCounter_txt;
+    int limit = 3;
+
     private void Awake()
     {
         instance = this;
@@ -14,7 +16,7 @@ public class Restart_3sec : MonoBehaviour
 
     public void DoRestartCounting()
     {
-        int limit = 3;
+
         timerCounter_txt = this.transform.GetChild(1).GetChild(0).GetComponent<Text>();
         StartCoroutine(threeSecondTimer(timerCounter_txt, limit));
     }

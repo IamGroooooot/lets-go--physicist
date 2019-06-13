@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IamPlus : MonoBehaviour
+public class ElectronCtrl : MonoBehaviour
 {
     
     // Start is called before the first frame update

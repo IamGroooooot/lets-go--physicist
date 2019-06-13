@@ -8,6 +8,8 @@ public class JHPlayerMoter : MonoBehaviour
 {
     public static JHPlayerMoter instance= null;
 
+    float stopTimer = 0;
+
     private void Awake()
     {
         instance = this;
@@ -24,7 +26,21 @@ public class JHPlayerMoter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // 3초 동안 멈추면 게임 오버
+        if (agent.velocity == Vector3.zero)
+        {
+            stopTimer += Time.deltaTime;
+            if (stopTimer>=2f)
+            {
+                GameObject.Find("Panels").transform.GetChild(1).gameObject.SetActive(true);
+                Restart_3sec.instance.DoRestartCounting();
+                stopTimer = -2f;
+            }
+        }
+        else
+        {
+            stopTimer = 0;
+        }
     }
 
     public void MoveToPoint(Vector3 point)

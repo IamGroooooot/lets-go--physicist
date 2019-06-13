@@ -1504,6 +1504,7 @@ GameObject:
   - component: {fileID: 495226047}
   - component: {fileID: 495226050}
   - component: {fileID: 495226051}
+  - component: {fileID: 495226052}
   m_Layer: 8
   m_Name: Mage Circle
   m_TagString: Untagged
@@ -1594,7 +1595,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 495226045}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 7.983202, y: 7.983204, z: 1.4786838}
@@ -1611,6 +1612,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8eed906e0355546b018de39996b593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &495226052
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495226045}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &504504860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1894,6 +1911,15 @@ PrefabInstance:
     - target: {fileID: 7904137461978326064, guid: b9f5e90fb66057c4a9aa116cb280b3df,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904137462171489239, guid: b9f5e90fb66057c4a9aa116cb280b3df,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 503727195, guid: b9f5e90fb66057c4a9aa116cb280b3df, type: 3}
+      propertyPath: m_Text
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6662,15 +6688,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9884f711c79bf44a843921f4d96825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementMask:
-    serializedVersion: 2
-    m_Bits: 256
   electronMask:
     serializedVersion: 2
     m_Bits: 512
   electronBlue: {fileID: 2100000, guid: c1e319fb6918c6d42bf92805270ee52d, type: 2}
   electronRed: {fileID: 2100000, guid: fe5dd0c98b0c38b4ca4beff27c944d0e, type: 2}
-  ChangeMaterial: 1
 --- !u!114 &2002923219
 MonoBehaviour:
   m_ObjectHideFlags: 0
