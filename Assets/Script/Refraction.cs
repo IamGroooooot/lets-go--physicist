@@ -159,7 +159,7 @@ public class Refraction : MonoBehaviour
             //굴절각
             refract_angle = Mathf.Asin(n1 * Mathf.Sin(Angle_between * Mathf.Deg2Rad) / n2) * Mathf.Rad2Deg;
             //굴절되는 방향이 반대인 경우가 있으므로 if문으로 체크
-            if (startPosition.y < savePosition.y)
+            if (0.49f < savePosition.y)
                 refractLine = new Vector3(-1 * normalLine.x, -1 * normalLine.y, normalLine.z) + new Vector3(normalLine.y * Mathf.Tan(refract_angle * Mathf.Deg2Rad), normalLine.x * Mathf.Tan(refract_angle * Mathf.Deg2Rad) * -1, normalLine.z);
             else
                 refractLine = new Vector3(-1 * normalLine.x, -1 * normalLine.y, normalLine.z) + new Vector3(-1 * normalLine.y * Mathf.Tan(refract_angle * Mathf.Deg2Rad), normalLine.x * Mathf.Tan(refract_angle * Mathf.Deg2Rad), normalLine.z);
@@ -175,7 +175,7 @@ public class Refraction : MonoBehaviour
     {
         Debug.Log("나옴");
         //굴절률이 다른 원 영역에서 나올 때 다시 굴절하는 각
-        if (startPosition.y < savePosition.y)
+        if (0.49f < savePosition.y)
             refractLine2 = new Vector3(refractLine.x, refractLine.y, refractLine.z) + new Vector3(refractLine.y * Mathf.Tan((Angle_between - refract_angle) * Mathf.Deg2Rad), -1 * refractLine.x * Mathf.Tan((Angle_between - refract_angle) * Mathf.Deg2Rad), refractLine.z);
         else
             refractLine2 = new Vector3(refractLine.x, refractLine.y, refractLine.z) + new Vector3(refractLine.y * Mathf.Tan((Angle_between - refract_angle) * Mathf.Deg2Rad) * -1, refractLine.x * Mathf.Tan((Angle_between - refract_angle) * Mathf.Deg2Rad), refractLine.z);
