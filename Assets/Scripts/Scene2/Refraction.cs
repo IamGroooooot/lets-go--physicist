@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 굴절을 위한 스크립트
+/// </summary>
 public class Refraction : MonoBehaviour
 {
     private GameObject mousePointA;
@@ -25,7 +28,7 @@ public class Refraction : MonoBehaviour
 
     private float Angle_between;
     private float refract_angle;
-
+    //클리어 창
     private GameObject clearCanvas;
 
     private Vector3 shootDirection;
@@ -90,7 +93,7 @@ public class Refraction : MonoBehaviour
         mousePointB.transform.position = transform.position + ((dimxy / difference) * currentdistance * -1);
         mousePointB.transform.position = new Vector3(mousePointB.transform.position.x, mousePointB.transform.position.y, -0.5f);
 
-        Debug.Log(mousePointA.transform.position);
+        //Debug.Log(mousePointA.transform.position);
         shootDirection = Vector3.Normalize(mousePointA.transform.position - transform.position);
 
     }
@@ -186,7 +189,7 @@ public class Refraction : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        //사운드
+        //사운드 - 원 탈출시 재생
         GameObject.Find("refractSound").GetComponent<AudioSource>().Play();
 
         Debug.Log("나옴");
@@ -208,6 +211,7 @@ public class Refraction : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        // 정지인데 게임 클리어하는 오류 방지
         if (GameObject.Find("Panels").transform.GetChild(1).gameObject.activeSelf)
         {
             return;
@@ -225,6 +229,7 @@ public class Refraction : MonoBehaviour
     }
     private void Update()
     {
+        //쏘고나서 시간이 많이 지났는데도 게임 종료가 안되면 게임오버
         if (didExit)
         {
             gameoverTimer += Time.deltaTime;
@@ -232,11 +237,13 @@ public class Refraction : MonoBehaviour
             {
                 GameObject.Find("Panels").transform.GetChild(1).gameObject.SetActive(true);
                 Restart_3sec.instance.DoRestartCounting();
+                //3초 재생이니 타이머 -3해서 계속 게임 오버되는 오류 방지
                 gameoverTimer = -3f;
             }
         }
     }
 
+    //슛하고 3초를 기다린 후에 Exit했다고 가정함. - 그것을 위한 코루틴
     IEnumerator whenShooted()
     {
         yield return new WaitForSeconds(3f);

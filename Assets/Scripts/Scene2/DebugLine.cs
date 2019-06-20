@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+/// <summary>
+/// 공 궤적을 그리는 스크립트
+/// </summary>
 [RequireComponent(typeof(LineRenderer))]
 public class DebugLine : MonoBehaviour
 {
@@ -17,6 +21,7 @@ public class DebugLine : MonoBehaviour
         StartCoroutine(DrawRoutine());
     }
 
+    //라인 렌더러로 궤적을 그립니다.
     IEnumerator DrawRoutine()
     {
         yield return new WaitUntil(() => target != null);
