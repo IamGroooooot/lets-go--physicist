@@ -2122,6 +2122,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7904137462233698440, guid: b9f5e90fb66057c4a9aa116cb280b3df,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904137462317259771, guid: b9f5e90fb66057c4a9aa116cb280b3df,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 503727195, guid: b9f5e90fb66057c4a9aa116cb280b3df, type: 3}
       propertyPath: m_Text
       value: 0
@@ -2781,7 +2791,6 @@ MonoBehaviour:
   zoomSpeed: 4
   minZoom: 5
   maxZoom: 15
-  yawSpeed: 100
 --- !u!82 &854017041
 AudioSource:
   m_ObjectHideFlags: 0

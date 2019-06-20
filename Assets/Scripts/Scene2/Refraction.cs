@@ -168,7 +168,7 @@ public class Refraction : MonoBehaviour
             //사운드
             GameObject.Find("refractSound").GetComponent<AudioSource>().Play();
 
-            Debug.Log("맞음");
+            //Debug.Log("맞음");
             savePosition = player.transform.position;
             normalLine = savePosition - other.transform.position;
             shootLine = startPosition - player.transform.position;
@@ -196,7 +196,7 @@ public class Refraction : MonoBehaviour
         //사운드 - 원 탈출시 재생
         GameObject.Find("refractSound").GetComponent<AudioSource>().Play();
 
-        Debug.Log("나옴");
+        //Debug.Log("나옴");
         //굴절률이 다른 원 영역에서 나올 때 다시 굴절하는 각
         if (0.49f < savePosition.y)
             refractLine2 = new Vector3(refractLine.x, refractLine.y, refractLine.z) + new Vector3(refractLine.y * Mathf.Tan((Angle_between - refract_angle) * Mathf.Deg2Rad), -1 * refractLine.x * Mathf.Tan((Angle_between - refract_angle) * Mathf.Deg2Rad), refractLine.z);
