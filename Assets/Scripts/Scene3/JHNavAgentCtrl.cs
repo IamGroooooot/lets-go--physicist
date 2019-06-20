@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class JHPlayerMoter : MonoBehaviour
+public class JHNavAgentCtrl : MonoBehaviour
 {
-    public static JHPlayerMoter instance= null;
+    public static JHNavAgentCtrl instance = null;
 
     float stopTimer = 0;
 

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 /// <summary>
 /// 굴절을 위한 스크립트
 /// </summary>
+[RequireComponent(typeof(ClickCtrl))]
 public class Refraction : MonoBehaviour
 {
     private GameObject mousePointA;
@@ -65,6 +66,7 @@ public class Refraction : MonoBehaviour
         clearCanvas = GameObject.Find("Panels").transform.GetChild(2).gameObject;
         didExit = false;
         gameoverTimer = 0f;
+        ClickCtrl.instance.BeforeClick();
     }
 
     private void OnMouseDrag()
@@ -106,12 +108,14 @@ public class Refraction : MonoBehaviour
         circle.GetComponent<Renderer>().enabled = false;
 
         //발사하면 떨어지게
-
         push = shootDirection * shootpower * -1;
         GetComponent<Rigidbody>().AddForce(push, ForceMode.Impulse);
         mousePointB.SetActive(false);
 
-        // 허공에 슛한 경우
+        //콜라이더 크기 원상 복구
+        ClickCtrl.instance.AfterClick();
+
+        // 허공에 슛한 경우를 위한 코루틴
         StartCoroutine(whenShooted());
     }
 

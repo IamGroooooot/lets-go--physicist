@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//JHPlayerMoter가 없으면 달아준다
-[RequireComponent(typeof(JHPlayerMoter))]
+/// <summary>
+/// 플레이어에 대한 스크립트
+/// </summary>
+[RequireComponent(typeof(JHNavAgentCtrl))]  //JHPlayerMoter가 없으면 달아준다
 public class JHPlayerCtrl : MonoBehaviour
 {
     // Electron을 인식하기 위한 마스크
@@ -15,23 +17,24 @@ public class JHPlayerCtrl : MonoBehaviour
 
     //메인 카메라
     Camera cam;
-    JHPlayerMoter motor;
+    JHNavAgentCtrl motor;
     // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main;
-        motor = GetComponent<JHPlayerMoter>();
+        motor = GetComponent<JHNavAgentCtrl>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // 정지 상태면 미실행
         if (Time.timeScale == 0)
         {
             return;
         }
 
-        //우측 클릭
+        //우측 클릭(스마트폰 하나 클릭)하면 레이케스트 쏨
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -41,7 +44,7 @@ public class JHPlayerCtrl : MonoBehaviour
             {
                 if (hit.collider.name.Contains("Electron"))
                 {
-                    Debug.Log("We Changed Mat. of " + hit.collider.name + " " + hit.collider.GetComponent<MeshRenderer>().material.name);
+                    //Debug.Log("Changed Mat. of " + hit.collider.name + " " + hit.collider.GetComponent<MeshRenderer>().material.name);
                     if (hit.collider.GetComponent<MeshRenderer>().material.name == "Plus"|| hit.collider.GetComponent<MeshRenderer>().material.name == "Plus (Instance)")
                     {
                         hit.collider.GetComponent<MeshRenderer>().material = electronRed;
