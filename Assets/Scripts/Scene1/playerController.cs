@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Scene1의 player를 Control하기 위한 스크립트입니다.
+/// </summary>
 public class playerController : MonoBehaviour
 {
     //Effect
@@ -21,14 +24,14 @@ public class playerController : MonoBehaviour
     private float safeSpace;
     private float shootpower;
 
+    //이겼을 때 띄울 캡버스
     private GameObject clearCanvas;
 
     private Vector3 shootDirection;
 
     Rigidbody t_Rigidbody;
-
     bool shot=false;
-    // Start is called before the first frame update
+
     private void Awake()
     {
         mousePointA = GameObject.FindGameObjectWithTag("PointA");
@@ -42,6 +45,7 @@ public class playerController : MonoBehaviour
     private void Start()
     {
         effect = GameObject.Find("Target").transform.GetChild(1).gameObject;
+        //Clear 패널 가져오기
         clearCanvas = GameObject.Find("Panels").transform.GetChild(2).gameObject;
     }
 
@@ -49,6 +53,7 @@ public class playerController : MonoBehaviour
     {
         currentdistance = Vector3.Distance(mousePointA.transform.position, transform.position);
 
+        //Clamp해줌
         if (currentdistance <= maxdistance)
         {
             safeSpace = currentdistance;
@@ -72,6 +77,7 @@ public class playerController : MonoBehaviour
         mousePointB.transform.position = new Vector3(mousePointB.transform.position.x, mousePointB.transform.position.y, -0.5f);
 
         shootDirection = Vector3.Normalize(mousePointA.transform.position - transform.position);
+        //마우스를 Drag했을 때의 (월드상의) 텍스트를 띄운다
         _3DTextCtrl.instance.MsgOnDragStart();
     }
 
@@ -90,8 +96,8 @@ public class playerController : MonoBehaviour
         mousePointB.SetActive(false);
 
         effect.SetActive(false);
+        //공을 던졌을 때의 사운드를 재생한다.
         GameObject.Find("throwBallSound").GetComponent<AudioSource>().Play();
-
     }
 
 
@@ -133,36 +139,41 @@ public class playerController : MonoBehaviour
 
         arrow.transform.localScale = new Vector3(1 + scaleX, 1 + scaleY/2, 0.001f);
         circle.transform.localScale = new Vector3(1 + scaleX, 1 + scaleY, 0.001f);
-
     }
 
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Target")
-        {
+        {   //원숭이 맞춘 경우
             Debug.Log("원숭이 맞춤");
+            //게임 승리 창 띄우기
             clearCanvas.gameObject.SetActive(true);
+            //원숭이 Destroy
             Destroy(collision.gameObject);
+            //원숭이 죽었을 때의 사운드 재생
             GameObject.Find("hitSound").GetComponent<AudioSource>().Play();
         }
         if (target == null)
-        {
+        {   //원숭이가 없는 경우
             return;
         }
         if(shot && collision.gameObject.tag == "Floor")
-        {
+        {   //공을 쏘았고 공이 바닥에 떨어진 경우
+            //원숭이 죽임(오류 방지)
             Destroy(target);
+            //게임 오버 코루틴 시작!
             StartCoroutine(gameOver());
             shot = false;
         }
     }
+    //0.5초 기다린 후에 게임 오버창을 띄우고 게임오버 사운드를 실행합니다.
     IEnumerator gameOver()
     {
         yield return new WaitForSeconds(0.5f);
         GameObject.Find("Panels").transform.GetChild(1).gameObject.SetActive(true);
         GameObject.Find("notHitSound").GetComponent<AudioSource>().Play();
-
+        //3초 후에 재시작한다.
         Restart_3sec.instance.DoRestartCounting();
     }
     

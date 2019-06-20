@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class JHGameVariableManager : MonoBehaviour
 {
-    /////////////////////////////////////////////////////////////////////////
-    // Varaibles
-    public static JHGameVariableManager instance = null;        // for singleton
-
-    /////////////////////////////////////////////////////////////////////////
-    // Methods
+    public static JHGameVariableManager instance = null; // for singleton
 
     private void Awake()
     {
@@ -20,7 +15,7 @@ public class JHGameVariableManager : MonoBehaviour
     /// 타입 이넘값으로 값을 저장해준다.
     /// string value 전용
     /// </summary>
-    public void SaveVariable(JHEnum.VariableType type, string value)
+    public void SaveVariable(GameDataEnum.VariableType type, string value)
     {
         // 이넘값 변환
         string key = type.ToString();
@@ -29,12 +24,11 @@ public class JHGameVariableManager : MonoBehaviour
         PlayerPrefs.SetString(key, value);
     }
 
-
     /// <summary>
     /// 타입 이넘값으로 값을 저장해준다.
     /// Int value 전용
     /// </summary>
-    public void SaveVariable(JHEnum.VariableType type, int value)
+    public void SaveVariable(GameDataEnum.VariableType type, int value)
     {
         // 이넘값 변환
         string key = type.ToString();
@@ -47,7 +41,7 @@ public class JHGameVariableManager : MonoBehaviour
     /// 타입 이넘값으로 값을 저장해준다.
     /// Float value 전용
     /// </summary>
-    public void SaveVariable(JHEnum.VariableType type, float value)
+    public void SaveVariable(GameDataEnum.VariableType type, float value)
     {
         // 이넘값 변환
         string key = type.ToString();
@@ -59,7 +53,7 @@ public class JHGameVariableManager : MonoBehaviour
     /// <summary>
     /// 타입 이넘값을 바탕으로 저장된 값을 불러온다.
     /// </summary>
-    public string LoadStringVariable(JHEnum.VariableType type)
+    public string LoadStringVariable(GameDataEnum.VariableType type)
     {
         // 이넘값 변환
         string key = type.ToString();
@@ -75,7 +69,7 @@ public class JHGameVariableManager : MonoBehaviour
     /// <summary>
     /// 타입 이넘값을 바탕으로 저장된 값을 불러온다.
     /// </summary>
-    public int LoadIntVariable(JHEnum.VariableType type)
+    public int LoadIntVariable(GameDataEnum.VariableType type)
     {
         // 이넘값 변환
         string key = type.ToString();
@@ -91,7 +85,7 @@ public class JHGameVariableManager : MonoBehaviour
     /// <summary>
     /// 타입 이넘값을 바탕으로 저장된 값을 불러온다.
     /// </summary>
-    public float LoadFloatVariable(JHEnum.VariableType type)
+    public float LoadFloatVariable(GameDataEnum.VariableType type)
     {
         // 이넘값 변환
         string key = type.ToString();
