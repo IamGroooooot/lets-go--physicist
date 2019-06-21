@@ -46,6 +46,14 @@ public class JHSceneManger : MonoBehaviour
     }
 
     /// <summary>
+    /// Move to S4
+    /// </summary>
+    public void OnClickS5()
+    {
+        SceneManager.LoadScene("S5");
+    }
+
+    /// <summary>
     /// Move to InGame Temp
     /// </summary>
     public void OnClickInGame()

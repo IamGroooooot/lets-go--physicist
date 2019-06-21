@@ -19,14 +19,14 @@ public class JHOnButtonClicked : MonoBehaviour
         _Pause = transform.Find("Panels").Find("PausePanel").gameObject;
         _Pause.SetActive(false);
         _Clear = transform.Find("Panels").Find("ClearPanel").gameObject;
-
+        
         if (SceneManager.GetActiveScene().buildIndex >= MAX_STAGE_BUILD_ID)
-        {
+        {//만약 최대씬 도달하면 next버튼 비활성화
             transform.Find("Panels").Find("ClearPanel").Find("Buttons").Find("Next").gameObject.SetActive(false);
             transform.Find("Panels").Find("PausePanel").Find("Buttons").Find("Next").gameObject.SetActive(false);
         }
         if (SceneManager.GetActiveScene().buildIndex <= MIN_STAGE_BUILD_ID)
-        {
+        {//만약 최소씬 도달하면 prev버튼 비활성화
             transform.Find("Panels").Find("ClearPanel").Find("Buttons").Find("Prev").gameObject.SetActive(false);
             transform.Find("Panels").Find("PausePanel").Find("Buttons").Find("Prev").gameObject.SetActive(false);
 
