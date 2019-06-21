@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 /// <summary>
 /// 설정을 위한 스크립트
@@ -14,7 +15,10 @@ public class Setting : MonoBehaviour
     void Start()
     {
         setting_Panel = GameObject.Find("Setting_Panel");
-        if(setting_Panel!=null)
+        string savedSoundOn = JHGameVariableManager.instance.LoadStringVariable(GameDataEnum.VariableType.eSound);
+        SoundOn = Convert.ToBoolean(savedSoundOn);
+            
+        if (setting_Panel!=null)
             setting_Panel.SetActive(false);
     }
 
