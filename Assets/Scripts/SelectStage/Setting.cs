@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 설정을 위한 스크립트
+/// </summary>
 public class Setting : MonoBehaviour
 {
     GameObject setting_Panel;
-    public static bool SoundOn=true;
+    public static bool SoundOn = true;
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +24,19 @@ public class Setting : MonoBehaviour
         
     }
 
+    //설정 버튼 눌렀을 때
     public void OnSettingClicked()
     {
         if(setting_Panel.activeSelf!=true)
             setting_Panel.SetActive(true);
         else
-            setting_Panel.SetActive(false);
+            OnSettingPanelClicked();
+    }
 
+    public void OnSettingPanelClicked()
+    {
+        gameObject.SetActive(false);
+        //나갈 때 save
+        JHGameVariableManager.instance.SaveVariable(GameDataEnum.VariableType.eSound, SoundOn.ToString());
     }
 }

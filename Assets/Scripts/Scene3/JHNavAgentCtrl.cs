@@ -21,6 +21,15 @@ public class JHNavAgentCtrl : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        if (Setting.SoundOn)
+        {
+            Camera.main.GetComponent<AudioSource>().enabled = false;
+        }
+        else
+        {
+            Camera.main.GetComponent<AudioSource>().enabled = true;
+
+        }
     }
 
     // Update is called once per frame

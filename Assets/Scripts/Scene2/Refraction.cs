@@ -67,6 +67,15 @@ public class Refraction : MonoBehaviour
         didExit = false;
         gameoverTimer = 0f;
         ClickCtrl.instance.BeforeClick();
+        if (Setting.SoundOn)
+        {
+            Camera.main.GetComponent<AudioSource>().enabled = false;
+        }
+        else
+        {
+            Camera.main.GetComponent<AudioSource>().enabled = true;
+
+        }
     }
 
     private void OnMouseDrag()
@@ -166,7 +175,8 @@ public class Refraction : MonoBehaviour
         if (other.tag == "Refraction")
         {
             //사운드
-            GameObject.Find("refractSound").GetComponent<AudioSource>().Play();
+            if (Setting.SoundOn)
+                GameObject.Find("refractSound").GetComponent<AudioSource>().Play();
 
             //Debug.Log("맞음");
             savePosition = player.transform.position;
@@ -194,7 +204,8 @@ public class Refraction : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         //사운드 - 원 탈출시 재생
-        GameObject.Find("refractSound").GetComponent<AudioSource>().Play();
+        if (Setting.SoundOn)
+            GameObject.Find("refractSound").GetComponent<AudioSource>().Play();
 
         //Debug.Log("나옴");
         //굴절률이 다른 원 영역에서 나올 때 다시 굴절하는 각

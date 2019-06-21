@@ -47,6 +47,15 @@ public class playerController : MonoBehaviour
         effect = GameObject.Find("Target").transform.GetChild(1).gameObject;
         //Clear 패널 가져오기
         clearCanvas = GameObject.Find("Panels").transform.GetChild(2).gameObject;
+        if (Setting.SoundOn)
+        {
+            Camera.main.GetComponent<AudioSource>().enabled = false;
+        }
+        else
+        {
+            Camera.main.GetComponent<AudioSource>().enabled = true;
+
+        }
     }
 
     private void OnMouseDrag()
@@ -97,7 +106,8 @@ public class playerController : MonoBehaviour
 
         effect.SetActive(false);
         //공을 던졌을 때의 사운드를 재생한다.
-        GameObject.Find("throwBallSound").GetComponent<AudioSource>().Play();
+        if(Setting.SoundOn)
+            GameObject.Find("throwBallSound").GetComponent<AudioSource>().Play();
     }
 
 
@@ -152,7 +162,8 @@ public class playerController : MonoBehaviour
             //원숭이 Destroy
             Destroy(collision.gameObject);
             //원숭이 죽었을 때의 사운드 재생
-            GameObject.Find("hitSound").GetComponent<AudioSource>().Play();
+            if (Setting.SoundOn)
+                GameObject.Find("hitSound").GetComponent<AudioSource>().Play();
         }
         if (target == null)
         {   //원숭이가 없는 경우
@@ -172,7 +183,8 @@ public class playerController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         GameObject.Find("Panels").transform.GetChild(1).gameObject.SetActive(true);
-        GameObject.Find("notHitSound").GetComponent<AudioSource>().Play();
+        if (Setting.SoundOn)
+            GameObject.Find("notHitSound").GetComponent<AudioSource>().Play();
         //3초 후에 재시작한다.
         Restart_3sec.instance.DoRestartCounting();
     }
