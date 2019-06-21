@@ -11,7 +11,8 @@ public class Setting : MonoBehaviour
     void Start()
     {
         setting_Panel = GameObject.Find("Setting_Panel");
-        setting_Panel.SetActive(false);
+        if(setting_Panel!=null)
+            setting_Panel.SetActive(false);
     }
 
     // Update is called once per frame
