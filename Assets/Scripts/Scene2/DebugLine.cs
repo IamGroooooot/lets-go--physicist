@@ -13,7 +13,7 @@ public class DebugLine : MonoBehaviour
 
 
     [SerializeField]
-    private float minDistance;
+    private float minDistance=0;
 
     private void Awake()
     {

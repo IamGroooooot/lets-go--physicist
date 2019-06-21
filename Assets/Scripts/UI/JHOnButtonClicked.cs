@@ -12,14 +12,16 @@ public class JHOnButtonClicked : MonoBehaviour
 
     GameObject _Pause;
     GameObject _Clear;
-    const int MAX_STAGE_BUILD_ID = 5;
+    GameObject _Hint;
+    const int MAX_STAGE_BUILD_ID = 6;
     const int MIN_STAGE_BUILD_ID = 2;
     private void Start()
     {
         _Pause = transform.Find("Panels").Find("PausePanel").gameObject;
         _Pause.SetActive(false);
         _Clear = transform.Find("Panels").Find("ClearPanel").gameObject;
-        
+        _Hint = transform.Find("Hint").GetChild(0).gameObject;
+
         if (SceneManager.GetActiveScene().buildIndex >= MAX_STAGE_BUILD_ID)
         {//만약 최대씬 도달하면 next버튼 비활성화
             transform.Find("Panels").Find("ClearPanel").Find("Buttons").Find("Next").gameObject.SetActive(false);
@@ -31,6 +33,31 @@ public class JHOnButtonClicked : MonoBehaviour
             transform.Find("Panels").Find("PausePanel").Find("Buttons").Find("Prev").gameObject.SetActive(false);
 
         }
+    }
+
+    /// <summary>
+    /// 힌트 버튼 
+    /// </summary>
+    public void OnClick_Hint()
+    {
+        if (_Hint == null)
+        {
+            Debug.Log("Error - Hint 패널 어디감?");
+        }
+
+        if (_Hint.activeSelf !=true)
+        {
+            Time.timeScale = 0;
+            Debug.Log("is Hint, TimeScale set to " + Time.timeScale.ToString());
+
+            _Hint.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            _Hint.SetActive(false);
+        }
+        
     }
 
     /// <summary>
