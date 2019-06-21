@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+//Scene1,2에서 마우스가 follow하는 스크립트
 public class MouseFollow : MonoBehaviour
 {
-
+    
     private float Offset = -0.5f;
         private Vector3 tempPos;
 
