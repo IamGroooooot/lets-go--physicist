@@ -14,6 +14,7 @@ public class GameDataEnum : MonoBehaviour
         eIsScene4Clear=300,
         eIsScene5Clear=400,
         eIsScene6Clear=500,
+        eSound=600,
     }
 }
 
