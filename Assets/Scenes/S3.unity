@@ -1147,7 +1147,7 @@ GameObject:
   - component: {fileID: 339673063}
   m_Layer: 10
   m_Name: Arrow (3)
-  m_TagString: Untagged
+  m_TagString: Minimap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3703,9 +3703,9 @@ GameObject:
   - component: {fileID: 957759020}
   - component: {fileID: 957759019}
   - component: {fileID: 957759018}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: MapText
-  m_TagString: Untagged
+  m_TagString: Minimap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4761,7 +4761,7 @@ GameObject:
   - component: {fileID: 1222462393}
   m_Layer: 10
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: Minimap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4852,7 +4852,7 @@ GameObject:
   - component: {fileID: 1243952365}
   m_Layer: 10
   m_Name: Arrow (5)
-  m_TagString: Untagged
+  m_TagString: Minimap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5451,7 +5451,7 @@ GameObject:
   - component: {fileID: 1378417857}
   m_Layer: 10
   m_Name: Arrow (6)
-  m_TagString: Untagged
+  m_TagString: Minimap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6921,7 +6921,7 @@ GameObject:
   - component: {fileID: 1601296806}
   m_Layer: 10
   m_Name: Arrow (1)
-  m_TagString: Untagged
+  m_TagString: Minimap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7845,7 +7845,7 @@ GameObject:
   - component: {fileID: 1843248802}
   m_Layer: 10
   m_Name: Arrow (4)
-  m_TagString: Untagged
+  m_TagString: Minimap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -8863,7 +8863,7 @@ GameObject:
   - component: {fileID: 2032469467}
   m_Layer: 10
   m_Name: Arrow (2)
-  m_TagString: Untagged
+  m_TagString: Minimap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
