@@ -25,6 +25,14 @@ public class CameraCtrl : MonoBehaviour
 
     public static bool cameraProcessing=false;
 
+    private void Start()
+    {
+        foreach (var item in CamSettingObjs)
+        {
+            item.SetActive(false);
+        }
+    }
+
     private void Update()
     {
         //카메라에 보이도록 Txt들을 회전시킨다
@@ -73,6 +81,8 @@ public class CameraCtrl : MonoBehaviour
     {
         if (CamSettingObjs[0].activeSelf)
         {
+            Time.timeScale = 1;
+
             foreach (var item in CamSettingObjs)
             {
                 item.SetActive(false);
@@ -80,6 +90,7 @@ public class CameraCtrl : MonoBehaviour
         }
         else
         {
+            Time.timeScale = 0;
             foreach (var item in CamSettingObjs)
             {
                 item.SetActive(true);
