@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public class CameraCtrl : MonoBehaviour
 {
+    public GameObject[] CamSettingObjs;
     public Transform playerTxt;
     public Transform Txt1;
     public Transform target;
@@ -15,19 +16,17 @@ public class CameraCtrl : MonoBehaviour
     //줌
     private static float currentZoom = 10;
     public float pitch = 1;
-    public float zoomSpeed = 4f;
+    public float zoomSpeed = 0.4f;
     public float minZoom= 5f;
     public float maxZoom= 15f;
     //회전
-    public static float yawSpeed = 100f;
+    public static float yawSpeed = 10f;
     private float currentYaw = 0;
+
+    public static bool cameraProcessing=false;
 
     private void Update()
     {
-        currentZoom -= Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
-        currentZoom = Mathf.Clamp(currentZoom,minZoom,maxZoom);
-
-        currentYaw += Input.GetAxis("Horizontal") * yawSpeed * Time.deltaTime;
         //카메라에 보이도록 Txt들을 회전시킨다
         playerTxt.LookAt(this.transform.position);
         Txt1.LookAt(this.transform.position);
@@ -42,5 +41,36 @@ public class CameraCtrl : MonoBehaviour
         transform.LookAt(target.position + Vector3.up * pitch);
         //카메라를 플레이어의 position을 기준으로 회전시킨다
         transform.RotateAround(target.position,Vector3.up, currentYaw);
+    }
+
+    public void OnZoomInClicked()
+    {
+        currentZoom -= zoomSpeed;
+        currentZoom = Mathf.Clamp(currentZoom, minZoom, maxZoom);
+    }
+
+
+    public void OnZoomOutClicked()
+    {
+        currentZoom += zoomSpeed;
+        currentZoom = Mathf.Clamp(currentZoom, minZoom, maxZoom);
+    }
+
+    //좌 회전 눌렀을 때
+    public void OnYawLClicked()
+    {
+        currentYaw -= yawSpeed;
+    }
+    
+    //우 회전 눌렀을 때
+    public void OnYawRClicked()
+    {
+        currentYaw += yawSpeed;
+    }
+
+    //카메라 설정창 열기 버튼 눌렀을 때
+    public void OnCamSettingBtnClicked()
+    {
+
     }
 }

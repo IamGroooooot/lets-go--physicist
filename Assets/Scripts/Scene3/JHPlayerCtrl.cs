@@ -37,6 +37,7 @@ public class JHPlayerCtrl : MonoBehaviour
         //우측 클릭(스마트폰 하나 클릭)하면 레이케스트 쏨
         if (Input.GetMouseButtonDown(0))
         {
+
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 

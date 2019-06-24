@@ -69,7 +69,6 @@ public class JHGameVariableManager : MonoBehaviour
         {
             savingValue = 0;
         }
-        Debug.Log("SAVING: "+savingValue);
         // 변환한 값을 그대로 넣어주자.
         PlayerPrefs.SetInt(key, savingValue);
     }
