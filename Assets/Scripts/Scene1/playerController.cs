@@ -183,7 +183,7 @@ public class playerController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         GameObject.Find("Panels").transform.GetChild(1).gameObject.SetActive(true);
-        if (!Setting.SoundOn)
+        if (Setting.SoundOn)
             GameObject.Find("notHitSound").GetComponent<AudioSource>().Play();
         //3초 후에 재시작한다.
         Restart_3sec.instance.DoRestartCounting();
