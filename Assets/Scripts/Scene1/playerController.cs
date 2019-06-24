@@ -106,7 +106,7 @@ public class playerController : MonoBehaviour
 
         effect.SetActive(false);
         //공을 던졌을 때의 사운드를 재생한다.
-        if(!Setting.SoundOn)
+        if(Setting.SoundOn)
             GameObject.Find("throwBallSound").GetComponent<AudioSource>().Play();
     }
 
@@ -162,7 +162,7 @@ public class playerController : MonoBehaviour
             //원숭이 Destroy
             Destroy(collision.gameObject);
             //원숭이 죽었을 때의 사운드 재생
-            if (!Setting.SoundOn)
+            if (Setting.SoundOn)
                 GameObject.Find("hitSound").GetComponent<AudioSource>().Play();
         }
         if (target == null)
