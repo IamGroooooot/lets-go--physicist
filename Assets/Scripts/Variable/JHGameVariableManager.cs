@@ -51,6 +51,30 @@ public class JHGameVariableManager : MonoBehaviour
     }
 
     /// <summary>
+    /// 타입 이넘값으로 값을 저장해준다.
+    /// Bool value 전용
+    /// </summary>
+    public void SaveVariable(GameDataEnum.VariableType type, bool value)
+    {
+        // 이넘값 변환
+        string key = type.ToString();
+
+        //Convert to int
+        int savingValue;
+        if (value)
+        {
+            savingValue = 1;
+        }
+        else
+        {
+            savingValue = 0;
+        }
+        Debug.Log("SAVING: "+savingValue);
+        // 변환한 값을 그대로 넣어주자.
+        PlayerPrefs.SetInt(key, savingValue);
+    }
+
+    /// <summary>
     /// 타입 이넘값을 바탕으로 저장된 값을 불러온다.
     /// </summary>
     public string LoadStringVariable(GameDataEnum.VariableType type)
@@ -76,6 +100,33 @@ public class JHGameVariableManager : MonoBehaviour
 
         // 불러오기
         int returnValue = PlayerPrefs.GetInt(key);
+
+        Debug.Log("LoadValue From //" + key + "// : //" + returnValue.ToString() + "//");
+
+        return returnValue;
+    }
+
+    /// <summary>
+    /// 타입 이넘값을 바탕으로 저장된 값을 불러온다.
+    /// </summary>
+    public bool LoadBoolVariable(GameDataEnum.VariableType type)
+    {
+        // 이넘값 변환
+        string key = type.ToString();
+
+        // 불러오기
+        int savedValue = PlayerPrefs.GetInt(key);
+
+        //Convert to int
+        bool returnValue;
+        if (savedValue==1)
+        {
+            returnValue = true;
+        }
+        else
+        {
+            returnValue = false;
+        }
 
         Debug.Log("LoadValue From //" + key + "// : //" + returnValue.ToString() + "//");
 
