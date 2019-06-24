@@ -23,6 +23,7 @@ public class JHPlayerCtrl : MonoBehaviour
     {
         cam = Camera.main;
         motor = GetComponent<JHNavAgentCtrl>();
+        
     }
 
     // Update is called once per frame

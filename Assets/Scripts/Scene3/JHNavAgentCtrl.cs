@@ -21,7 +21,7 @@ public class JHNavAgentCtrl : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        if (Setting.SoundOn)
+        if (!Setting.SoundOn)
         {
             Camera.main.GetComponent<AudioSource>().enabled = false;
         }

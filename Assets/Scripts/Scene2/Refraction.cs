@@ -67,7 +67,7 @@ public class Refraction : MonoBehaviour
         didExit = false;
         gameoverTimer = 0f;
         ClickCtrl.instance.BeforeClick();
-        if (Setting.SoundOn)
+        if (!Setting.SoundOn)
         {
             Camera.main.GetComponent<AudioSource>().enabled = false;
         }
@@ -175,7 +175,7 @@ public class Refraction : MonoBehaviour
         if (other.tag == "Refraction")
         {
             //사운드
-            if (Setting.SoundOn)
+            if (!Setting.SoundOn)
                 GameObject.Find("refractSound").GetComponent<AudioSource>().Play();
 
             //Debug.Log("맞음");
@@ -204,7 +204,7 @@ public class Refraction : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         //사운드 - 원 탈출시 재생
-        if (Setting.SoundOn)
+        if (!Setting.SoundOn)
             GameObject.Find("refractSound").GetComponent<AudioSource>().Play();
 
         //Debug.Log("나옴");

@@ -11,6 +11,7 @@ public class Setting : MonoBehaviour
 {
     GameObject setting_Panel;
     public static bool SoundOn = true;
+  
     [SerializeField]
     private GameObject sound;
     
