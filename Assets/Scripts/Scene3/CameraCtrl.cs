@@ -71,6 +71,19 @@ public class CameraCtrl : MonoBehaviour
     //카메라 설정창 열기 버튼 눌렀을 때
     public void OnCamSettingBtnClicked()
     {
-
+        if (CamSettingObjs[0].activeSelf)
+        {
+            foreach (var item in CamSettingObjs)
+            {
+                item.SetActive(false);
+            }
+        }
+        else
+        {
+            foreach (var item in CamSettingObjs)
+            {
+                item.SetActive(true);
+            }
+        }
     }
 }
